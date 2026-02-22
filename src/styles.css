@@ -1,0 +1,368 @@
+:root {
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --surface-2: #f2f4f6;
+  --text: #14171a;
+  --muted: #5a6168;
+  --line: #dde2e7;
+  --accent: #0f1720;
+  --accent-soft: #e9edf2;
+  --radius: 20px;
+  --shadow: 0 12px 30px rgba(12, 18, 28, 0.08);
+  --container: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at 20% 0%, #ffffff 0%, #f6f7f8 42%, #eff2f5 100%);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  background: var(--text);
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 8px;
+}
+
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+.site-shell {
+  padding-bottom: 5rem;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, #f6f7f8 78%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.topbar-inner {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.link-chip {
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+}
+
+.section {
+  padding: 4.25rem 0;
+}
+
+.hero {
+  padding-top: 5.2rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.45rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 16ch;
+}
+
+.lead {
+  font-size: clamp(1.01rem, 2.2vw, 1.22rem);
+  color: var(--muted);
+  max-width: 62ch;
+  margin-bottom: 1.8rem;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #69727b;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.72rem 1.2rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible,
+.text-link:focus-visible,
+.inline-link:focus-visible,
+.link-chip:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  border-color: var(--line);
+  background: var(--surface);
+}
+
+.hero-panel {
+  background: linear-gradient(160deg, #0f1720 0%, #233347 100%);
+  color: #f0f4f8;
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.panel-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hero-panel ul {
+  margin: 0;
+  padding-left: 1.05rem;
+  color: #d4dee8;
+}
+
+.positioning-bar {
+  padding: 1rem 0;
+}
+
+.positioning-inner {
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.positioning-inner p {
+  margin: 0;
+  color: #45505a;
+  font-size: 0.95rem;
+}
+
+.section-header {
+  max-width: 720px;
+  margin-bottom: 1.25rem;
+}
+
+.section-header.centered {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section-header h2 {
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  letter-spacing: -0.02em;
+}
+
+.grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.cards-3 {
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(10, 15, 22, 0.04);
+}
+
+.card h3 {
+  font-size: 1.16rem;
+  margin-bottom: 0.55rem;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.bullet-list,
+.addon-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.bullet-list li,
+.addon-list li {
+  color: #2d3640;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pricing-card.featured {
+  border-color: #bdccd9;
+  box-shadow: 0 10px 24px rgba(15, 23, 32, 0.12);
+  background: linear-gradient(180deg, #ffffff 0%, #f5f8fb 100%);
+}
+
+.price {
+  font-size: 1.22rem;
+  color: #111827 !important;
+  font-weight: 700;
+}
+
+.text-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: #1f4b7f;
+}
+
+.case-card {
+  max-width: 820px;
+}
+
+.muted {
+  color: #6b7681 !important;
+  font-size: 0.95rem;
+}
+
+.cta-block {
+  padding-top: 2rem;
+}
+
+.cta-card {
+  text-align: left;
+  background: linear-gradient(145deg, #111a24 0%, #243648 100%);
+  color: #f4f7fb;
+}
+
+.cta-card p,
+.cta-card .eyebrow {
+  color: #d7e2ee;
+}
+
+.inline-link {
+  color: #cce6ff;
+}
+
+.reveal {
+  animation: fadeUp 520ms ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 760px) {
+  .hero-grid {
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: center;
+  }
+
+  .positioning-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0.85rem 1.2rem;
+  }
+
+  .cards-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pricing-grid .pricing-card:nth-child(2) {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .btn,
+  .pricing-grid .pricing-card:nth-child(2) {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
