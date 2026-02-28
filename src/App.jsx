@@ -58,11 +58,11 @@ const fitList = [
 ]
 
 const Section = ({ id, eyebrow, title, children, centered = false }) => (
-  <section id={id} className="section">
+  <section id={id} className="section" aria-labelledby={`${id}-heading`}>
     <div className="container">
       <header className={`section-header ${centered ? 'centered' : ''}`}>
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h2>{title}</h2>
+        <h2 id={`${id}-heading`}>{title}</h2>
       </header>
       {children}
     </div>
@@ -81,6 +81,11 @@ const App = () => {
             <a href="#" className="brand" aria-label="Outfront Studios home">
               Outfront Studios
             </a>
+            <nav className="topbar-nav" aria-label="Primary">
+              <a href="#services">Services</a>
+              <a href="#packages">Packages</a>
+              <a href="#proof">Case Highlight</a>
+            </nav>
             <a className="link-chip" href="mailto:payton@outfrontstudios.io">
               payton@outfrontstudios.io
             </a>
@@ -88,11 +93,11 @@ const App = () => {
         </header>
 
         <main id="main-content">
-          <section className="hero section">
+          <section className="hero section" aria-labelledby="hero-title">
             <div className="container hero-grid">
-              <div>
+              <div className="hero-copy">
                 <p className="eyebrow">Outfront Studios · outfrontstudios.io</p>
-                <h1>We help local businesses grow with apps, AI, and content that converts.</h1>
+                <h1 id="hero-title">We help local businesses grow with apps, AI, and content that converts.</h1>
                 <p className="lead">
                   Outfront Studios builds revenue systems — from direct-order apps and rewards flows to
                   content and automation — so you get more sales, repeat customers, and smoother operations.
@@ -194,11 +199,11 @@ const App = () => {
             </div>
           </Section>
 
-          <section className="section cta-block">
+          <section className="section cta-block" aria-labelledby="cta-title">
             <div className="container">
               <div className="card cta-card reveal">
                 <p className="eyebrow">Let’s build your next growth system</p>
-                <h2>Ready to turn marketing activity into measurable local revenue?</h2>
+                <h2 id="cta-title">Ready to turn marketing activity into measurable local revenue?</h2>
                 <p>
                   Reach out at{' '}
                   <a href="mailto:payton@outfrontstudios.io" className="inline-link">
