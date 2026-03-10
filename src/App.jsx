@@ -1,341 +1,245 @@
 import './styles.css'
 
-const pillars = [
+const CONTACT = 'mailto:hello@seatowndigital.com'
+
+/* ── Data ── */
+
+const services = [
   {
     num: '01',
-    title: 'Direct-Order Growth Systems',
+    title: 'Web & App Development',
     description:
-      'Custom ordering flows, rewards, and offer mechanics that lift repeat purchases while reducing third-party dependency.',
-    points: ['Direct-order app strategy', 'Loyalty and rewards automation', 'Offer and retention flows'],
+      'Custom websites and web apps built fast with modern tools. From marketing sites to full-stack platforms — designed to convert and built to scale.',
   },
   {
     num: '02',
-    title: 'Content Engine',
+    title: 'Lead Generation Systems',
     description:
-      'Consistent, high-performing creative tailored for local markets so your brand stays visible and your offers stay relevant.',
-    points: ['Short-form content systems', 'Campaign hooks and scripts', 'Creative testing cadence'],
+      'Content and SEO infrastructure that brings clients to you passively. We build the pipeline once; it works for you continuously.',
   },
   {
     num: '03',
-    title: 'Operator-Level Systems',
+    title: 'Social Content',
     description:
-      'AI and automation embedded into daily operations so teams move faster with cleaner handoffs and fewer bottlenecks.',
-    points: ['Workflow automation', 'Lead and order routing', 'Owner-friendly reporting'],
+      'Short form video and content strategy that builds local brand awareness. Consistent creative that earns attention in your market.',
+  },
+  {
+    num: '04',
+    title: 'Digital Growth Partnerships',
+    description:
+      'Long term retainer relationships focused on measurable revenue growth. We embed as your digital team — strategy through execution.',
   },
 ]
 
-const stats = [
+const work = [
   {
-    num: '3',
-    label: 'Core systems',
-    sub: 'Content, growth, and ops — designed to compound over time.',
+    index: '01',
+    client: 'Korea House',
+    location: 'Marysville, WA',
+    description:
+      'Restaurant app, waitlist system, and social content strategy that shifted the business toward direct orders and built a loyal repeat customer base.',
+    tags: ['Restaurant App', 'Waitlist System', 'Social Content'],
   },
   {
-    num: '$0',
-    label: 'Wasted spend',
-    sub: 'Every dollar tied to a measurable, trackable outcome.',
+    index: '02',
+    client: 'Eastside Living WA',
+    location: 'Bellevue, WA',
+    description:
+      'Real estate content site and lead gen system built for tech professionals relocating to the greater Seattle area. Organic-first, built to rank.',
+    tags: ['Content Site', 'Lead Gen System', 'Real Estate SEO'],
   },
   {
-    num: '1',
-    label: 'Aligned partner',
-    sub: 'Outfront embedded in your growth, not just on retainer.',
-  },
-]
-
-const packages = [
-  {
-    name: 'Launch System',
-    price: '$500 setup + $500/mo',
-    description: 'For businesses that need a fast, focused revenue foundation.',
-    features: ['Conversion-focused starter stack', 'Basic automation setup', 'Monthly optimization check-in'],
-  },
-  {
-    name: 'Growth System',
-    price: '$1,500/mo',
-    description: 'For teams ready to scale acquisition and repeat revenue.',
-    features: ['Multi-channel content engine', 'Offers + loyalty optimization', 'Performance tracking + weekly iterations'],
-    featured: true,
-  },
-  {
-    name: 'Operator Partner',
-    price: '$2,000/mo',
-    description: 'For owners who want Outfront embedded as a strategic operator.',
-    features: ['Advanced automation architecture', 'Priority strategy + execution support', 'Systems tuning across growth + ops'],
+    index: '03',
+    client: 'Allan Jackson Real Estate',
+    location: 'Seattle, WA',
+    description:
+      'Agent landing page with Calendly integration and neighborhood guides. Converts organic search traffic into qualified calls without manual effort.',
+    tags: ['Landing Page', 'Calendly Integration', 'Neighborhood Guides'],
   },
 ]
 
-const addons = [
-  'Additional short-form content packs',
-  'Seasonal campaign sprints',
-  'CRM and messaging stack migration',
-  'Menu and offer architecture refresh',
-  'On-site creative production day',
-]
-
-const fitList = [
-  'Restaurant and hospitality brands shifting to stronger direct-order economics',
-  'Local operators who want repeatable growth instead of random marketing bursts',
-  'Teams that need tighter systems across content, offers, and operations',
-]
-
-const Section = ({ id, eyebrow, title, children, centered = false }) => (
-  <section id={id} className="section" aria-labelledby={`${id}-heading`}>
-    <div className="container">
-      <header className={`section-header ${centered ? 'centered' : ''}`}>
-        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h2 id={`${id}-heading`}>{title}</h2>
-      </header>
-      {children}
-    </div>
-  </section>
+/* ── Icons (inline SVG — no dependencies) ── */
+const ArrowRight = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <polyline points="12 5 19 12 12 19" />
+  </svg>
 )
 
-const App = () => {
-  return (
-    <>
-      <a className="skip-link" href="#main-content">
-        Skip to main content
-      </a>
+/* ── App ── */
+const App = () => (
+  <>
+    <a className="skip-link" href="#main">
+      Skip to main content
+    </a>
 
-      <div className="site-shell">
-        {/* ── Topbar ── */}
-        <header className="topbar" aria-label="Site header">
-          <div className="container topbar-inner">
-            <a href="#" className="brand" aria-label="Outfront Studios home">
-              <span className="brand-dot" aria-hidden="true" />
-              Outfront Studios
-            </a>
-            <nav className="topbar-nav" aria-label="Primary">
-              <a href="#services">Services</a>
-              <a href="#packages">Packages</a>
-              <a href="#proof">Case Highlight</a>
-              <a href="#fit">Who It's For</a>
-            </nav>
-            <a className="link-chip" href="mailto:payton@outfrontstudios.io">
-              payton@outfrontstudios.io
-            </a>
-          </div>
-        </header>
-
-        <main id="main-content">
-          {/* ── Hero ── */}
-          <section className="hero" aria-labelledby="hero-title">
-            <div className="container hero-grid">
-              <div className="hero-copy">
-                <div className="hero-badge" aria-label="Agency focus">
-                  <span className="hero-badge-dot" aria-hidden="true" />
-                  Revenue Systems for Local Businesses
-                </div>
-                <h1 id="hero-title">
-                  Apps, AI, and content that actually converts.
-                </h1>
-                <p className="lead">
-                  Outfront Studios builds revenue systems — from direct-order apps and rewards flows to
-                  content and automation — so you get more sales, repeat customers, and smoother operations.
-                </p>
-                <div className="hero-actions">
-                  <a
-                    className="btn btn-primary"
-                    href="mailto:payton@outfrontstudios.io?subject=Outfront%20Studios%20-%20Strategy%20Call"
-                  >
-                    Book a strategy call
-                  </a>
-                  <a className="btn btn-secondary" href="#packages">
-                    View packages
-                  </a>
-                </div>
-              </div>
-
-              <aside className="hero-panel" aria-label="Value proposition">
-                <p className="panel-label">Built for local operators</p>
-                <p className="panel-title">Outcomes, not noise. Systems that compound over time.</p>
-                <ul className="panel-list">
-                  <li>More direct sales, less third-party dependency</li>
-                  <li>Higher repeat customer rate through loyalty flows</li>
-                  <li>Smarter day-to-day operations with AI automation</li>
-                </ul>
-              </aside>
-            </div>
-          </section>
-
-          {/* ── Stats bar ── */}
-          <div className="stats-bar" aria-label="Key highlights">
-            <div className="container">
-              <div className="stats-inner">
-                {stats.map((s) => (
-                  <div className="stat-item" key={s.label}>
-                    <div className="stat-num" aria-hidden="true">{s.num}</div>
-                    <div className="stat-label">
-                      <strong>{s.label}</strong>
-                      {s.sub}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* ── Services ── */}
-          <Section id="services" eyebrow="Service pillars" title="Three systems that drive compounding growth">
-            <div className="grid cards-3">
-              {pillars.map((pillar) => (
-                <article key={pillar.title} className="card reveal">
-                  <div className="card-icon" aria-hidden="true">{pillar.num}</div>
-                  <h3>{pillar.title}</h3>
-                  <p>{pillar.description}</p>
-                  <ul className="bullet-list">
-                    {pillar.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          </Section>
-
-          {/* ── Packages ── */}
-          <Section id="packages" eyebrow="Packages" title="Flexible engagement based on your growth stage">
-            <div className="grid cards-3 pricing-grid">
-              {packages.map((pkg) => (
-                <article
-                  key={pkg.name}
-                  className={`card pricing-card reveal ${pkg.featured ? 'featured' : ''}`}
-                >
-                  <div>
-                    {pkg.featured && (
-                      <div className="pricing-badge" aria-label="Recommended package">
-                        Most Popular
-                      </div>
-                    )}
-                    <h3>{pkg.name}</h3>
-                    <p className="price">{pkg.price}</p>
-                    <p className="pkg-desc">{pkg.description}</p>
-                    <ul className="bullet-list">
-                      {pkg.features.map((feature) => (
-                        <li key={feature}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <a
-                    className={`btn ${pkg.featured ? 'btn-primary' : 'btn-light'}`}
-                    href="mailto:payton@outfrontstudios.io?subject=Outfront%20Studios%20-%20Package%20Inquiry"
-                  >
-                    Get started
-                  </a>
-                </article>
-              ))}
-            </div>
-          </Section>
-
-          {/* ── Add-ons ── */}
-          <Section id="addons" eyebrow="Optional add-ons" title="Layer in exactly what your team needs">
-            <div className="addon-grid">
-              {addons.map((item) => (
-                <div className="addon-item reveal" key={item}>
-                  <span className="addon-check" aria-hidden="true">+</span>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </Section>
-
-          {/* ── Case Study ── */}
-          <Section id="proof" eyebrow="Proof highlight" title="Korea House v2">
-            <article className="card case-card reveal">
-              <div className="case-tag">Client case</div>
-              <h3>From scattered channels to a clearer revenue system</h3>
-              <p>
-                For Korea House v2, Outfront Studios helped shape a cleaner direct-order path, stronger offer
-                rhythm, and tighter content-to-conversion flow. The result: a more consistent customer journey
-                that supported repeat visits and smoother in-store execution.
-              </p>
-              <p className="muted">Case details available on request.</p>
-            </article>
-          </Section>
-
-          {/* ── Who it's for ── */}
-          <Section id="fit" eyebrow="Who this is for" title="Great fit for owners who value clarity and execution">
-            <div className="card fit-card reveal">
-              <ul className="fit-list">
-                {fitList.map((item, i) => (
-                  <li key={item}>
-                    <span className="fit-icon" aria-hidden="true">{i + 1}</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Section>
-
-          {/* ── CTA ── */}
-          <section className="cta-section" aria-labelledby="cta-title">
-            <div className="container">
-              <div className="cta-card reveal">
-                <div className="cta-card-text">
-                  <p className="eyebrow">Let's build your next growth system</p>
-                  <h2 id="cta-title">Ready to turn marketing activity into measurable local revenue?</h2>
-                  <p>
-                    Reach out at{' '}
-                    <a href="mailto:payton@outfrontstudios.io" className="inline-link">
-                      payton@outfrontstudios.io
-                    </a>{' '}
-                    and let's map your next 90 days.
-                  </p>
-                </div>
-                <div className="cta-actions">
-                  <a
-                    className="btn btn-primary"
-                    href="mailto:payton@outfrontstudios.io?subject=Outfront%20Studios%20-%20Start%20Project"
-                  >
-                    Contact Outfront Studios
-                  </a>
-                  <a className="btn btn-secondary" href="#services">
-                    Explore services
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        {/* ── Footer ── */}
-        <footer className="footer" aria-label="Site footer">
-          <div className="container">
-            <div className="footer-inner">
-              <div>
-                <a href="#" className="footer-brand" aria-label="Outfront Studios home">
-                  <span className="brand-dot" aria-hidden="true" />
-                  Outfront Studios
-                </a>
-                <p className="footer-desc">
-                  Revenue systems for local businesses — direct-order apps, AI automation, and content that converts.
-                </p>
-              </div>
-
-              <nav className="footer-nav" aria-label="Footer navigation">
-                <p className="footer-nav-label">Navigation</p>
-                <a href="#services">Services</a>
-                <a href="#packages">Packages</a>
-                <a href="#proof">Case Highlight</a>
-                <a href="#fit">Who It's For</a>
-              </nav>
-
-              <div>
-                <p className="footer-nav-label">Get in touch</p>
-                <a href="mailto:payton@outfrontstudios.io" className="footer-email">
-                  payton@outfrontstudios.io
-                </a>
-              </div>
-            </div>
-
-            <div className="footer-bottom">
-              © {new Date().getFullYear()} Outfront Studios · outfrontstudios.io
-            </div>
-          </div>
-        </footer>
+    {/* ── Topbar ── */}
+    <header className="topbar" role="banner">
+      <div className="container topbar-inner">
+        <a href="#" className="site-logo" aria-label="Seatown Digital — home">
+          <span className="logo-mark" aria-hidden="true" />
+          Seatown Digital
+        </a>
+        <a href={CONTACT} className="topbar-btn">
+          Get in Touch
+        </a>
       </div>
-    </>
-  )
-}
+    </header>
+
+    <main id="main">
+      {/* ════════════════════════════════════════
+          HERO
+      ════════════════════════════════════════ */}
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="container">
+          <div className="hero-layout">
+
+            {/* Left — primary content */}
+            <div>
+              <p className="hero-label" aria-hidden="true">
+                Digital Growth Agency · Seattle, WA
+              </p>
+              <h1 id="hero-title" className="hero-headline">
+                We Build the Digital Infrastructure That{' '}
+                <span className="accent-word">Grows Your Business.</span>
+              </h1>
+              <p className="hero-sub">
+                Websites, apps, content, and lead systems for local businesses
+                in the Pacific Northwest.
+              </p>
+              <div className="hero-actions">
+                <a href="#work" className="btn btn-primary">
+                  See Our Work
+                  <span className="btn-arrow" aria-hidden="true">
+                    <ArrowRight />
+                  </span>
+                </a>
+                <a href={CONTACT} className="btn btn-ghost">
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+
+            {/* Right — services panel, desktop only */}
+            <aside className="hero-side" aria-label="Services overview">
+              <div className="hero-panel">
+                <p className="panel-label">What We Build</p>
+                <ul className="panel-list">
+                  {services.map((s) => (
+                    <li key={s.num} className="panel-item">
+                      <span className="panel-dot" aria-hidden="true" />
+                      {s.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          WHAT WE DO
+      ════════════════════════════════════════ */}
+      <section
+        id="services"
+        className="section"
+        aria-labelledby="services-title"
+      >
+        <div className="container">
+          <div className="services-wrap">
+
+            {/* Aside heading */}
+            <div className="services-aside">
+              <p className="section-eyebrow">What We Do</p>
+              <h2 id="services-title" className="section-headline">
+                Four ways we grow local business.
+              </h2>
+            </div>
+
+            {/* Numbered rows */}
+            <ul className="services-list" aria-label="Services">
+              {services.map((s) => (
+                <li key={s.num} className="service-row">
+                  <span className="service-num" aria-hidden="true">
+                    {s.num}
+                  </span>
+                  <div>
+                    <h3 className="service-title">{s.title}</h3>
+                    <p className="service-desc">{s.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          OUR WORK
+      ════════════════════════════════════════ */}
+      <section id="work" className="section" aria-labelledby="work-title">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-eyebrow">Our Work</p>
+            <h2 id="work-title" className="section-headline">
+              Selected projects.
+            </h2>
+          </div>
+
+          <div className="work-grid">
+            {work.map((item) => (
+              <article key={item.client} className="work-card">
+                <p className="work-index" aria-hidden="true">
+                  {item.index}
+                </p>
+                <h3 className="work-client">{item.client}</h3>
+                <p className="work-location">{item.location}</p>
+                <p className="work-desc">{item.description}</p>
+                <ul className="work-tags" aria-label="Services delivered">
+                  {item.tags.map((tag) => (
+                    <li key={tag} className="tag">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {/* ── Footer ── */}
+    <footer className="footer" role="contentinfo">
+      <div className="container">
+        <div className="footer-inner">
+          <a href="#" className="footer-brand" aria-label="Seatown Digital — home">
+            <span className="logo-mark" aria-hidden="true" />
+            Seatown Digital
+          </a>
+          <a href={CONTACT} className="footer-email">
+            hello@seatowndigital.com
+          </a>
+          <p className="footer-copy">
+            © {new Date().getFullYear()} Seatown Digital
+          </p>
+        </div>
+      </div>
+    </footer>
+  </>
+)
 
 export default App
