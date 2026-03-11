@@ -21,7 +21,7 @@
   --electric-glow:  rgba(0, 200, 255, 0.08);
 
   /* Type scale — 6 stops, not one more */
-  --t-xl:    clamp(3.4rem, 2.4rem + 5vw, 6.8rem);
+  --t-xl:    clamp(2.8rem, 2rem + 3.5vw, 4.8rem);
   --t-h2:    clamp(2.1rem, 1.6rem + 2.4vw, 3.6rem);
   --t-h3:    clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
   --t-body:  1.0625rem;
@@ -215,8 +215,8 @@ ul { list-style: none; }
    HERO
 ═══════════════════════════════════════════════════════ */
 .hero {
-  padding-top: clamp(4.5rem, 3.5rem + 4vw, 8rem);
-  padding-bottom: clamp(4rem, 3rem + 4vw, 7rem);
+  padding-top: clamp(3rem, 2.5rem + 3vw, 5.5rem);
+  padding-bottom: clamp(3rem, 2.5rem + 3vw, 5rem);
   position: relative;
   overflow: hidden;
 }
@@ -263,7 +263,7 @@ ul { list-style: none; }
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--electric);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -284,7 +284,7 @@ ul { list-style: none; }
   letter-spacing: -0.04em;
   color: var(--paper);
   max-width: 15ch;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .accent-word {
@@ -296,7 +296,7 @@ ul { list-style: none; }
   color: var(--paper-dim);
   max-width: 43ch;
   line-height: 1.72;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-actions {
