@@ -1,6 +1,6 @@
 import './styles.css'
 
-const CONTACT = 'mailto:hello@seatowndigital.com'
+const CONTACT = 'mailto:payton@seatowndigital.com'
 
 /* ── Data ── */
 
@@ -231,7 +231,7 @@ const App = () => (
             Seatown Digital
           </a>
           <a href={CONTACT} className="footer-email">
-            hello@seatowndigital.com
+            payton@seatowndigital.com
           </a>
           <p className="footer-copy">
             © {new Date().getFullYear()} Seatown Digital
